@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="h5 mt-2">Disease Prediction</div>
+    <hr />
+
+    <div class="card shadow-sm symptoms mb-2">
+      <div class="card-body">
+        <div
+          class="row g-1"
+          *ngIf="SelectedSymptoms.length >= 1; else nosymptoms"
+        >
+          <div
+            class="col symptom shadow mx-2 my-1"
+            *ngFor="let symptom of SelectedSymptoms; let i = index"
+          >
+            <span class="mx-1">{{ symptom }}</span>
+            <i
+              class="fas fa-times-circle close-icon"
+              (click)="removeSymptom(i)"
+            ></i>
+          </div>
+        </div>
+        <ng-template #nosymptoms>
+          <span class="card-subtitle text-danger">Select Symptoms...!</span>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="row mt-2 d-flex">
+      <div class="col-6">
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="symptom"
+            list="datalistOptions"
+            id="exampleDataList"
+            placeholder="Type to search..."
+            [(ngModel)]="symptom"
+            (change)="addSymptom()"
+          />
+          <small id="helpId" class="form-text text-muted">
+            select symptom (You can select upto 17 symptoms)
+          </small>
+          <datalist id="datalistOptions">
+            <option [value]="s" *ngFor="let s of DiseaseSymptoms"></option>
+          </datalist>
+        </div>
+      </div>
+      <div class="col-6">
+        <button
+          type="button"
+          class="btn btn-success"
+          *ngIf="!predicting"
+          (click)="predict()"
+        >
+          Predict Disease
+        </button>
+        <div class="prg d-flex align-items-center" *ngIf="predicting">
+          <span class="mx-2">Predicting...</span>
+          <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h6 text-danger" *ngIf="predictedDisease">
+      Predicted Disease : {{ predictedDisease }}
+    </div>
+  </div>
+</div>
