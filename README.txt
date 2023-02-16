@@ -1,11 +1,5 @@
-#Pre-Consultation with Health Record Using Blockchain
+****Aim of the Project****
 
-## Problem Statement
-Over decades, medical facilities have evolved elegantly. Still most of us are the witness of the fact that whenever we see a doctor, we need to put forward our medical file in front of him/her. Our file contains our previous prescriptions, medical reports, X-Rays, MRIs etc. It is a tedious task to keep a record of all these.
-
-Currently, EHR systems in hospitals are problematic. They are hacked often (just google 'ehr systems hacked'), are not transparent, and don't keep a record of all changes to the patient record.
-
-## Aim of the Project
 We aim to provide a digital solution to this problem so that next time when you visit your doctor, you don’t need to carry your medical file. We will be using Blockchain technology to store the patient records. This will ensure that the information remains secure while being decentralized across different peers.
 
 The basic idea is to use Blockchain for storing patient records. The workflow would be as follows:
@@ -51,10 +45,6 @@ open: http://localhost:4200/
 **** CLEARING THE SERVER  AND CLIENT ***
 in Server dir:python manage.py flush
 in CLient :truffle migrate
-
-if any confusion please let me know.
-
-
 
 ```
 
