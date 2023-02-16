@@ -17,8 +17,6 @@ python -m pip install -r requirements.txt
 python manage.py migrate
 python manage.py run server
 
-```project setup:
-https://youtube.com/playlist?list=PL54V-i7zW55d1VKxEkp9DCPt5k_zE6m3X
 
 open GANACHE and import project 
 open CMD in the Client Directory
